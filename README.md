@@ -1,3 +1,57 @@
+# OpenDTU-OnBattery-LimitPatch
+
+This project is a fork of **OpenDTU-OnBattery**,  
+extending the firmware with an additional **DPL-Off limit feature**:
+
+- New WebUI toggle to choose the output limit (**Minimum** / **Maximum**) when disabling the Dynamic Power Limiter.  
+- Alternative version without toggle: always sets the output limit to **Maximum** when disabling the Dynamic Power Limiter.
+- **THIS VERSION: without toggle!**
+
+### Patch scope
+- Applies **only to solar-powered inverters**.  
+- Battery-powered inverters remain unchanged (original behavior).  
+
+### Behavior
+- **Original firmware**: If you turn off DPL, the output limit is set to the **minimum** value.  
+- **This patch**: If you turn off DPL, the output limit is set to the **maximum** value instead.  
+- With the **switchable version**, you can select the behavior in the WebUI (minimum or maximum).  
+
+---
+
+## Note
+This is an **unofficial extension**.  
+For official releases without these modifications, please refer to the upstream projects listed below.
+
+---
+
+## Releases
+Precompiled **.bin firmware files** can be found in the [Releases section](https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases).
+
+- Flash them directly to your ESP32 without compiling yourself.  
+- The full modified source code is included in this repository.  
+
+---
+
+## License
+This project, like the originals, is licensed under the **GNU General Public License v2 (GPL-2.0)**.  
+
+- Free use, modification, and redistribution are allowed.  
+- Source code must be made available when distributing binaries.  
+- Original copyright and license notices must remain intact.  
+
+A copy of the license is provided in the file [LICENSE](https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/blob/development/LICENSE)
+
+---
+
+## Credits
+- **Original development**: [tbnobody/OpenDTU](https://github.com/tbnobody/OpenDTU)  
+- **Battery/DPL extension**: [hoylabs/OpenDTU-OnBattery](https://github.com/hoylabs/OpenDTU-OnBattery)  
+- **Additional DPL-Off limit feature**: [maxclaudi](https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch)  
+
+---
+
+# Original OpenDTU-OnBattery README
+
 [![OpenDTU-OnBattery Build](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/build.yml/badge.svg)](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/build.yml)
 [![cpplint](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/cpplint.yml/badge.svg)](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/cpplint.yml)
 [![Yarn Linting](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/yarnlint.yml/badge.svg)](https://github.com/hoylabs/OpenDTU-OnBattery/actions/workflows/yarnlint.yml)
@@ -18,31 +72,8 @@ OpenDTU-OnBattery is a fork of [OpenDTU](https://github.com/tbnobody/OpenDTU),
 which adds support for battery chargers, battery management systems (BMS), and
 power meters on a single ESP32. Its Dynamic Power Limiter can adjust the
 power production of one or more solar- and/or battery-powered inverter(s) to
-the actual household consumption. In this way, it is possible to implement a
+the actual houshold consumption. In this way, it is possible to implement a
 zero export policy.
-
-## Inverter Firmware Compatibility
-
-⚠️ **WARNING: Avoid firmware version 2.0.4** ⚠️
-
-| Version | PDL\*) | Temporary Limit | Persistent Limit | Recommendation                  |
-|:--------|:------:|:---------------:|:----------------:|---------------------------------|
-| 1.0.x   | ❌     | ✅              | ✅               | Best Option if PDL not required |
-| 1.1.12  | ✅     | ✅              | ❌               | Not recommended                 |
-| 2.0.4   | ❌     | ❌              | ❌               | Avoid/Downgrade                 |
-
-\*) PDL = Power Distribution Logic, i.e., the inverter's ability to limit the
-inputs individually to achieve the desired AC output power.
-
-**Key Issues:**
-- **Version 1.1.12**: PDL works fine, but persistent limit changes are not
-  supported ([#1890](https://github.com/hoylabs/OpenDTU-OnBattery/issues/1890)).
-- **Version 2.0.4**: Inverter reports 100% power limit after 4 minutes without
-  limit updates, causing the DPL to stop working
-  ([#1901](https://github.com/hoylabs/OpenDTU-OnBattery/issues/1901)).
-
-**Recommendation**: Version 1.1.12 has working PDL but is still not recommended
-due to persistent limit issues. Avoid version 2.0.4 completely.
 
 ## ⚠️  About Hardware For Sale
 

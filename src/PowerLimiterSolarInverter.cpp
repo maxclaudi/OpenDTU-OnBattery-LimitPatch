@@ -128,7 +128,7 @@ uint16_t PowerLimiterSolarInverter::applyReduction(uint16_t reduction, bool)
 uint16_t PowerLimiterSolarInverter::standby()
 {
     // solar-powered inverters are never actually put into standby (by the
-    // DPL), but only set to the configured lower power limit instead.
-    setAcOutput(_config.LowerPowerLimit);
-    return getCurrentOutputAcWatts() - _config.LowerPowerLimit;
+    // DPL), but only set to the configured max power limit instead.
+    setAcOutput(getConfiguredMaxPowerWatts());
+    return getCurrentOutputAcWatts() - getConfiguredMaxPowerWatts();
 }

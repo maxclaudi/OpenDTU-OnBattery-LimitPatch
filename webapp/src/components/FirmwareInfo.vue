@@ -16,15 +16,13 @@
                         <td>{{ systemStatus.config_version }}-OnBattery-{{ systemStatus.config_version_onbattery }}</td>
                     </tr>
                     <tr>
-                        <th>{{ $t('firmwareinfo.FirmwareVersion') }}</th>
+                        <th>Firmware Version</th>
                         <td>
                             <a
-                                :href="versionInfoUrl"
+                                href="https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases/tag/25.06.11-patch_DplOff-Limit_maximum-maxclaudi"
                                 target="_blank"
-                                v-tooltip
-                                :title="$t('firmwareinfo.FirmwareVersionHint')"
                             >
-                                {{ systemStatus.git_hash }}
+                                25.06.11-patch_DplOff-Limit_maximum-maxclaudi
                             </a>
                         </td>
                     </tr>
@@ -36,7 +34,7 @@
                         <th>{{ $t('firmwareinfo.PioEnv') }}</th>
                         <td>{{ systemStatus.pioenv }}</td>
                     </tr>
-                    <tr>
+                    <tr v-if="false">
                         <th>{{ $t('firmwareinfo.FirmwareUpdate') }}</th>
                         <td>
                             <div class="form-check form-check-inline form-switch">
@@ -123,12 +121,6 @@ export default defineComponent({
                 const [count, time] = timestampToString(this.$i18n.locale, value, true);
                 return { count, time };
             };
-        },
-        versionInfoUrl(): string {
-            if (this.systemStatus.git_is_hash) {
-                return 'https://github.com/hoylabs/OpenDTU-OnBattery/commits/' + this.systemStatus.git_hash;
-            }
-            return 'https://github.com/hoylabs/OpenDTU-OnBattery/releases/tag/' + this.systemStatus.git_hash;
         },
     },
 });
