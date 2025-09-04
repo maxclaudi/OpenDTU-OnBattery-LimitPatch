@@ -191,6 +191,7 @@ void ConfigurationClass::serializePowerLimiterConfig(PowerLimiterConfig const& s
     };
 
     target["enabled"] = source.Enabled;
+	target["on_disable_use_upper_limit"] = source.OnDisableUseUpperLimit; // <---
     target["solar_passthrough_enabled"] = source.SolarPassThroughEnabled;
     target["conduction_losses"] = source.ConductionLosses;
     target["battery_always_use_at_night"] = source.BatteryAlwaysUseAtNight;
@@ -609,6 +610,7 @@ void ConfigurationClass::deserializePowerLimiterConfig(JsonObject const& source,
     };
 
     target.Enabled = source["enabled"] | POWERLIMITER_ENABLED;
+	target.OnDisableUseUpperLimit = source["on_disable_use_upper_limit"] | POWERLIMITER_ON_DISABLE_USE_UPPER_LIMIT;
     target.SolarPassThroughEnabled = source["solar_passthrough_enabled"] | POWERLIMITER_SOLAR_PASSTHROUGH_ENABLED;
     target.ConductionLosses = source["conduction_losses"] | POWERLIMITER_CONDUCTION_LOSSES;
     target.BatteryAlwaysUseAtNight = source["battery_always_use_at_night"] | POWERLIMITER_BATTERY_ALWAYS_USE_AT_NIGHT;

@@ -1,4 +1,5 @@
 #include "PowerLimiterSolarInverter.h"
+#include "Configuration.h" // <---
 
 PowerLimiterSolarInverter::PowerLimiterSolarInverter(PowerLimiterInverterConfig const& config)
     : PowerLimiterOverscalingInverter(config) { }
@@ -125,10 +126,16 @@ uint16_t PowerLimiterSolarInverter::applyReduction(uint16_t reduction, bool)
     return getCurrentOutputAcWatts() - _config.LowerPowerLimit;
 }
 
-uint16_t PowerLimiterSolarInverter::standby()
-{
-    // solar-powered inverters are never actually put into standby (by the
-    // DPL), but only set to the configured lower power limit instead.
-    setAcOutput(_config.LowerPowerLimit);
-    return getCurrentOutputAcWatts() - _config.LowerPowerLimit;
+uint16_t PowerLimiterSolarInverter::standby() {
+    const bool useUpper = Configuration.get().PowerLimiter.OnDisableUseUpperLimit;
+    if (useUpper) {
+        setAcOutput(_config.UpperPowerLimit);
+        auto cur = getCurrentOutputAcWatts();
+        return (cur < _config.UpperPowerLimit) ? (_config.UpperPowerLimit - cur) : 0;
+    } else {
+        setAcOutput(_config.LowerPowerLimit);
+        auto cur = getCurrentOutputAcWatts();
+        return (cur > _config.LowerPowerLimit) ? (cur - _config.LowerPowerLimit) : 0;
+    }
 }
+

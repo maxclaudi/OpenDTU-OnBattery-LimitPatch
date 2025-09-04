@@ -158,6 +158,7 @@ using PowerLimiterInverterConfig = struct POWERLIMITER_INVERTER_CONFIG_T;
 
 struct POWERLIMITER_CONFIG_T {
     bool Enabled;
+	bool OnDisableUseUpperLimit;   // <---
     bool SolarPassThroughEnabled;
     uint8_t ConductionLosses;
     bool BatteryAlwaysUseAtNight;
