@@ -59,7 +59,7 @@
                         v-for="(inv, idx) in powerLimiterConfigList.inverters"
                         :key="idx"
                         :label="$t('powerlimiteradmin.GovernInverter', { name: inverterName(inv.serial) })"
-                        v-model="powerLimiterConfigList.inverters[idx].is_governed"
+                        v-model="inv.is_governed"
                         type="checkbox"
                         wide
                     />
@@ -143,7 +143,7 @@
                         <InputElement
                             v-if="hasPowerMeter"
                             :label="$t('powerlimiteradmin.InverterIsBehindPowerMeter')"
-                            v-model="powerLimiterConfigList.inverters[idx].is_behind_power_meter"
+                            v-model="inv.is_behind_power_meter"
                             :tooltip="$t('powerlimiteradmin.InverterIsBehindPowerMeterHint')"
                             type="checkbox"
                             wide
@@ -154,10 +154,7 @@
                                 {{ $t('powerlimiteradmin.PowerSource') }}
                             </label>
                             <div class="col-sm-8">
-                                <select
-                                    class="form-select"
-                                    v-model="powerLimiterConfigList.inverters[idx].power_source"
-                                >
+                                <select class="form-select" v-model="inv.power_source">
                                     <option
                                         v-for="provider in powerSourceList"
                                         :key="provider.key"
@@ -172,20 +169,17 @@
                         <InputElement
                             :label="$t('powerlimiteradmin.AllowStandby')"
                             :tooltip="$t('powerlimiteradmin.AllowStandbyHint')"
-                            v-if="powerLimiterConfigList.inverters[idx].power_source == 2"
-                            v-model="powerLimiterConfigList.inverters[idx].allow_standby"
+                            v-if="inv.power_source == 2"
+                            v-model="inv.allow_standby"
                             type="checkbox"
                             wide
                         />
 
                         <InputElement
-                            v-if="
-                                powerLimiterConfigList.inverters[idx].power_source != 0 &&
-                                inverterSupportsOverscaling(inv.serial)
-                            "
+                            v-if="inv.power_source != 0 && inverterSupportsOverscaling(inv.serial)"
                             :label="$t('powerlimiteradmin.UseOverscaling')"
                             :tooltip="$t('powerlimiteradmin.UseOverscalingHint')"
-                            v-model="powerLimiterConfigList.inverters[idx].use_overscaling_to_compensate_shading"
+                            v-model="inv.use_overscaling_to_compensate_shading"
                             type="checkbox"
                             wide
                         />
@@ -193,7 +187,7 @@
                         <InputElement
                             :label="$t('powerlimiteradmin.LowerPowerLimit')"
                             :tooltip="$t('powerlimiteradmin.LowerPowerLimitHint')"
-                            v-model="powerLimiterConfigList.inverters[idx].lower_power_limit"
+                            v-model="inv.lower_power_limit"
                             postfix="W"
                             type="number"
                             wide
@@ -202,14 +196,10 @@
                         <div class="row">
                             <div class="col-sm-4"></div>
                             <div class="col-sm-8">
-                                <div
-                                    v-if="lowerLimitWarning(powerLimiterConfigList.inverters[idx])"
-                                    class="alert alert-warning"
-                                    role="alert"
-                                >
+                                <div v-if="lowerLimitWarning(inv)" class="alert alert-warning" role="alert">
                                     {{
                                         $t('powerlimiteradmin.LowerPowerLimitWarning', {
-                                            min: getLowerLimitMinimum(powerLimiterConfigList.inverters[idx]),
+                                            min: getLowerLimitMinimum(inv),
                                         })
                                     }}
                                 </div>
@@ -218,7 +208,7 @@
 
                         <InputElement
                             :label="$t('powerlimiteradmin.UpperPowerLimit')"
-                            v-model="powerLimiterConfigList.inverters[idx].upper_power_limit"
+                            v-model="inv.upper_power_limit"
                             :tooltip="$t('powerlimiteradmin.UpperPowerLimitHint')"
                             postfix="W"
                             type="number"
