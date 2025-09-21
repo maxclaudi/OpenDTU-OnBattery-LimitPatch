@@ -106,6 +106,7 @@
         "7015": "Hass-Topic darf keine Leerzeichen enthalten!",
         "7016": "LWT QoS darf nicht größer als {max} sein!",
         "7017": "Client ID darf nicht länger als {max} Zeichen sein!",
+        "7018": "Hass-Topic muss mit einem Slash (/) enden!",
         "8001": "IP-Adresse ist ungültig!",
         "8002": "Netzmaske ist ungültig!",
         "8003": "Standardgateway ist ungültig!",
@@ -701,7 +702,7 @@
         "ConfigHintNoBatteryInterface": "SoC-basierte Schwellwerte können nur mit konfigurierter Batteriekommunikationsschnittstelle genutzt werden.",
         "General": "Allgemein",
         "Enable": "Aktiviert",
-		"DisableUseUpperLimit": "DPL aus, volle Leistung",
+		"DisableUseUpperLimit": "DPL aus, volle Leistung",											
         "GovernInverter": "Steuere Wechselrichter \"{name}\"",
         "EnableSolarPassthrough": "Aktiviere Solar-Passthrough",
         "ConductionLosses": "Leitungsverluste",
@@ -820,9 +821,6 @@
         "ZendureSunsetOffset": "Offset @:ntpinfo.Sunset",
         "ZendureOutputLimitDay": "@:batteryadmin.ZendureOutputLimit (@:ntpinfo.Day)",
         "ZendureOutputLimitNight": "@:batteryadmin.ZendureOutputLimit (@:ntpinfo.Night)",
-        "ZendureChargeThrough": "Vollladeeinstellungen",
-        "ZendureChargeThroughEnabled": "Vollladen",
-        "ZendureChargeThroughInterval": "Maximales Interval",
         "zendure": {
             "deviceTypes": {
                 "Hub1200": "Hub 1200",
@@ -838,7 +836,11 @@
                 "Full": "Volle Kontrolle",
                 "Once": "Einstellungen einmalig schreiben",
                 "ReadOnly": "Nur Lesezugriff"
-            }
+            },
+            "chargeThrough": "Vollladeeinstellungen",
+            "chargeThroughEnabled": "Vollladen",
+            "chargeThroughInterval": "Maximales Interval",
+            "chargeThroughReset": "Reset Schwellwert"
         }
     },
     "inverteradmin": {
@@ -938,19 +940,19 @@
         "InvalidFileType": "Ungültiger Dateityp. Bitte wählen Sie eine Firmware-Datei mit gültigen Erweiterungen: {validTypes}"
     },
     "about": {
-    "AboutOpendtu": "OpenDTU-OnBattery-LimitPatch",
-    "Documentation": "Dokumentation",
-    "DocumentationBody": "Die maßgebliche Firmware- und Hardware-Dokumentation findest du unter <a href=\"https://opendtu-onbattery.net\" target=\"_blank\">https://opendtu-onbattery.net</a>.",
-    "ProjectOrigin": "Projekt Ursprung",
-    "ProjectOriginBody1": "Dieses Projekt ist ein Fork von OpenDTU-OnBattery (Originalautor: tbnobody). Das Basis-Projekt OpenDTU wurde aus <a href=\"https://www.mikrocontroller.net/topic/525778\" target=\"_blank\">dieser Diskussion (mikrocontroller.net)</a> heraus gestartet.",
-    "ProjectOriginBody2": "Das Hoymiles-Protokoll wurde durch die freiwilligen Bemühungen vieler Teilnehmer entschlüsselt. OpenDTU wurde auf dieser Arbeit aufgebaut. Das Projekt ist unter der GNU General Public License version 2 lizenziert (<a href=\"https://www.gnu.de/documents/gpl-2.0.de.html\" target=\"_blank\">GPL v2</a>).",
-    "ProjectOriginBody3": "Diese Fork enthält zusätzliche Funktionen, die speziell von maxclaudi entwickelt oder geändert wurden. Es kann keine Haftung für Fehlfunktionen oder Garantieverlust des Wechselrichters übernommen werden.",
-    "ProjectOriginBody4": "OpenDTU, OpenDTU-OnBattery und dieser Fork sind frei verfügbar.",
-    "NewsUpdates": "Neuigkeiten und Updates",
-    "NewsUpdatesBody": "Neue Updates zu dieser Fork findest du auf <a href=\"https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases\" target=\"_blank\">Github</a>.",
-    "ErrorReporting": "Fehlerberichte",
-    "ErrorReportingBody": "Bitte melde Probleme mit dieser Fork über die Ticketverwaltung von <a href=\"https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/issues\" target=\"_blank\">Github</a>.",
-    "Discussion": "Diskussion",
+        "AboutOpendtu": "Über OpenDTU-OnBattery",
+        "Documentation": "Dokumentation",
+        "DocumentationBody": "Die maßgebliche Firmware- und Hardware-Dokumentation findest du unter <a href=\"https://opendtu-onbattery.net\" target=\"_blank\">https://opendtu-onbattery.net</a>.",
+        "ProjectOrigin": "Projekt Ursprung",
+        "ProjectOriginBody1": "OpenDTU-OnBattery ist eine Erweiterung von OpenDTU. Das Basis-Projekt OpenDTU wurde aus <a href=\"https://www.mikrocontroller.net/topic/525778\" target=\"_blank\">dieser Diskussion (mikrocontroller.net)</a> heraus gestartet.",
+        "ProjectOriginBody2": "Das Hoymiles-Protokoll wurde durch die freiwilligen Bemühungen vieler Teilnehmer entschlüsselt. OpenDTU wurde unter anderem auf der Grundlage dieser Arbeit entwickelt. Das Projekt ist unter einer Open-Source-Lizenz lizenziert (<a href=\"https://www.gnu.de/documents/gpl-2.0.de.html\" target=\"_blank\">GNU General Public License version 2</a>).",
+        "ProjectOriginBody3": "Die Software wurde nach bestem Wissen und Gewissen entwickelt. Dennoch kann keine Haftung für eine Fehlfunktion oder einen Garantieverlust des Wechselrichters übernommen werden.",
+        "ProjectOriginBody4": "OpenDTU und OpenDTU-OnBattery sind frei verfügbar. Wenn du Geld für die Software bezahlt hast, wurdest du wahrscheinlich abgezockt.",
+        "NewsUpdates": "Neuigkeiten und Updates",
+        "NewsUpdatesBody": "Neue Updates findest du auf <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/releases\" target=\"_blank\">Github</a>.",
+        "ErrorReporting": "Fehlerberichte",
+        "ErrorReportingBody": "Bitte melde Probleme über die Ticketverwaltung von <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/issues\" target=\"_blank\">Github</a>.",
+        "Discussion": "Diskussion",
     "DiscussionBody": "Für diese Fork können nur Fehler gemeldet werden. Diskussionen sind nicht vorgesehen."
     },
     "hints": {
@@ -1227,6 +1229,7 @@
         "midpointVoltage": "Mittelpunktspannung",
         "midpointDeviation": "Mittelpunktsabweichung",
         "lastFullCharge": "Letztes mal Vollgeladen",
+        "lastEmptyCharge": "Letztes mal Vollständig Entladen",
         "solarInputPower1": "Leistung MPPT1",
         "solarInputPower2": "Leistung MPPT2",
         "totalInputPower": "Eingangsleistung",
@@ -1262,10 +1265,20 @@
         "remainInTime": "Verbleibende Ladezeit",
         "unavail": "N/A",
         "useableCapacity": "Nutzbare Kapazität",
-        "chargethrough": "Vollladezyklus",
         "controlMode": "@:batteryadmin.zendure.controlMode",
         "full-access": "@:batteryadmin.zendure.controlModes.Full",
         "write-once": "Einmalig Schreiben",
-        "read-only": "@:batteryadmin.zendure.controlModes.ReadOnly"
+        "read-only": "@:batteryadmin.zendure.controlModes.ReadOnly",
+        "zendure": {
+            "chargeThroughState": "Status Vollladezyklus",
+            "chargeThroughStates": {
+                "disabled": "@:battery.disabled",
+                "idle": "@:battery.idle",
+                "soft": "Gestartet",
+                "hard": "Erzwungen",
+                "keep": "Halten",
+                "invalid": "@:battery.invalid"
+            }
+        }
     }
 }

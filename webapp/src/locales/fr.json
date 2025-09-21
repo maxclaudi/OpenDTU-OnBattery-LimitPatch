@@ -103,6 +103,7 @@
         "7015": "Le sujet Hass ne doit pas contenir d'espace !",
         "7016": "LWT QOS ne doit pas être supérieur à {max}!",
         "7017": "Client ID must not longer then {max} characters!",
+        "7018": "Hass topic must end with slash (/)!",
         "8001": "L'adresse IP n'est pas valide !",
         "8002": "Le masque de réseau n'est pas valide !",
         "8003": "La passerelle n'est pas valide !",
@@ -737,7 +738,7 @@
         "ConfigHintNoBatteryInterface": "SoC-based thresholds can only be used if a battery communication interface is configured.",
         "General": "General",
         "Enable": "Enable",
-		"DisableUseUpperLimit": "DPL désactivé, limite maximale",
+		"DisableUseUpperLimit": "DPL désactivé, limite maximale",													 
         "GovernInverter": "Govern Inverter \"{name}\"",
         "EnableSolarPassthrough": "Enable Solar-Passthrough",
         "ConductionLosses": "Conduction Losses",
@@ -802,19 +803,19 @@
         "InvalidFileType": "Type de fichier invalide. Veuillez sélectionner un fichier firmware avec des extensions valides : {validTypes}"
     },
     "about": {
-    "AboutOpendtu": "OpenDTU-OnBattery-LimitPatch",
-    "Documentation": "Documentation",
-    "DocumentationBody": "La documentation principale du firmware et du matériel est disponible sur <a href=\"https://opendtu-onbattery.net\" target=\"_blank\">https://opendtu-onbattery.net</a>.",
-    "ProjectOrigin": "Origine du projet",
-    "ProjectOriginBody1": "Ce projet est un fork de OpenDTU-OnBattery (auteur original : tbnobody). Le projet de base OpenDTU a été lancé à partir de <a href=\"https://www.mikrocontroller.net/topic/525778\" target=\"_blank\">cette discussion (mikrocontroller.net)</a>.",
-    "ProjectOriginBody2": "Le protocole Hoymiles a été décodé grâce aux efforts volontaires de nombreux participants. OpenDTU a été développé sur cette base. Le projet est sous licence GNU General Public License version 2 (<a href=\"https://www.gnu.de/documents/gpl-2.0.de.html\" target=\"_blank\">GPL v2</a>).",
-    "ProjectOriginBody3": "Ce fork inclut des fonctionnalités supplémentaires développées ou modifiées par maxclaudi. Aucune responsabilité ne peut être assumée pour des dysfonctionnements ou la perte de garantie de l'onduleur.",
-    "ProjectOriginBody4": "OpenDTU, OpenDTU-OnBattery et ce fork sont librement disponibles.",
-    "NewsUpdates": "Nouveautés & Mises à jour",
-    "NewsUpdatesBody": "Les nouvelles mises à jour de ce fork sont disponibles sur <a href=\"https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases\" target=\"_blank\">GitHub</a>.",
-    "ErrorReporting": "Rapports de bugs",
-    "ErrorReportingBody": "Veuillez signaler les problèmes de ce fork via le système de tickets sur <a href=\"https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/issues\" target=\"_blank\">GitHub</a>.",
-    "Discussion": "Discussion",
+        "AboutOpendtu": "À propos d'OpenDTU-OnBattery",
+        "Documentation": "Documentation",
+        "DocumentationBody": "La documentation canonique sur les microprogrammes et le matériel est accessible à l'adresse <a href=\"https://opendtu-onbattery.net\" target=\"_blank\">https://opendtu-onbattery.net</a>.",
+        "ProjectOrigin": "Origine du projet",
+        "ProjectOriginBody1": "Ce projet a été démarré suite à cette discussion <a href=\"https://www.mikrocontroller.net/topic/525778\" target=\"_blank\">(Mikrocontroller.net)</a>.",
+        "ProjectOriginBody2": "Le protocole Hoymiles a été décrypté grâce aux efforts volontaires de nombreux participants. OpenDTU, entre autres, a été développé sur la base de ce travail. Le projet est sous licence Open Source (<a href=\"https://www.gnu.de/documents/gpl-2.0.de.html\" target=\"_blank\">GNU General Public License version 2</a>).",
+        "ProjectOriginBody3": "Le logiciel a été développé au mieux de nos connaissances et de nos convictions. Néanmoins, aucune responsabilité ne peut être acceptée en cas de dysfonctionnement ou de perte de garantie de l'onduleur.",
+        "ProjectOriginBody4": "OpenDTU et OpenDTU-OnBattery sont disponible gratuitement. Si vous avez payé pour le logiciel, vous avez probablement été arnaqué.",
+        "NewsUpdates": "Actualités et mises à jour",
+        "NewsUpdatesBody": "Les nouvelles mises à jour peuvent être trouvées sur <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/releases\" target=\"_blank\">Github</a>.",
+        "ErrorReporting": "Rapport d'erreurs",
+        "ErrorReportingBody": "Veuillez signaler les problèmes en utilisant la fonction fournie par <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/issues\" target=\"_blank\">Github</a>.",
+        "Discussion": "Discussion",
     "DiscussionBody": "Seuls les rapports de bugs sont acceptés pour ce fork. Les discussions générales ne sont pas prises en charge."
     },
     "hints": {
@@ -1032,7 +1033,6 @@
         "remainOutTime": "Remaining discharge time",
         "remainInTime": "Remaining charge time",
         "unavail": "N/A",
-        "useableCapacity": "Useable capacity",
-        "chargethrough": "Charge through cycle"
+        "useableCapacity": "Useable capacity"
     }
 }
