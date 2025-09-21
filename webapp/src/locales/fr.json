@@ -738,7 +738,7 @@
         "ConfigHintNoBatteryInterface": "SoC-based thresholds can only be used if a battery communication interface is configured.",
         "General": "General",
         "Enable": "Enable",
-		"DisableUseUpperLimit": "DPL désactivé, limite maximale",													 
+        "DisableUseUpperLimit": "DPL désactivé, limite maximale",
         "GovernInverter": "Govern Inverter \"{name}\"",
         "EnableSolarPassthrough": "Enable Solar-Passthrough",
         "ConductionLosses": "Conduction Losses",
@@ -816,7 +816,7 @@
         "ErrorReporting": "Rapport d'erreurs",
         "ErrorReportingBody": "Veuillez signaler les problèmes en utilisant la fonction fournie par <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/issues\" target=\"_blank\">Github</a>.",
         "Discussion": "Discussion",
-    "DiscussionBody": "Seuls les rapports de bugs sont acceptés pour ce fork. Les discussions générales ne sont pas prises en charge."
+        "DiscussionBody": "Seuls les rapports de bugs sont acceptés pour ce fork. Les discussions générales ne sont pas prises en charge."
     },
     "hints": {
         "NoTotals": "Enable and configure features, e.g., by registering an inverter, to show data.",
