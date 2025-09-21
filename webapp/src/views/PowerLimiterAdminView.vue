@@ -46,13 +46,13 @@
                     type="checkbox"
                     wide
                 />
-				
-				<InputElement
-                        :label="$t('powerlimiteradmin.DisableUseUpperLimit')"
-                        v-model="powerLimiterConfigList.on_disable_use_upper_limit"
-                        type="checkbox"
-                        wide
-                    />
+
+                <InputElement
+                    :label="$t('powerlimiteradmin.DisableUseUpperLimit')"
+                    v-model="powerLimiterConfigList.on_disable_use_upper_limit"
+                    type="checkbox"
+                    wide
+                />
 
                 <template v-if="powerLimiterConfigList.enabled">
                     <InputElement
@@ -63,7 +63,6 @@
                         type="checkbox"
                         wide
                     />
-
                 </template>
 
                 <template v-if="isEnabled">

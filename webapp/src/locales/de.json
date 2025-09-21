@@ -702,7 +702,7 @@
         "ConfigHintNoBatteryInterface": "SoC-basierte Schwellwerte können nur mit konfigurierter Batteriekommunikationsschnittstelle genutzt werden.",
         "General": "Allgemein",
         "Enable": "Aktiviert",
-		"DisableUseUpperLimit": "DPL aus, volle Leistung",											
+        "DisableUseUpperLimit": "DPL aus, volle Leistung",
         "GovernInverter": "Steuere Wechselrichter \"{name}\"",
         "EnableSolarPassthrough": "Aktiviere Solar-Passthrough",
         "ConductionLosses": "Leitungsverluste",
@@ -953,7 +953,7 @@
         "ErrorReporting": "Fehlerberichte",
         "ErrorReportingBody": "Bitte melde Probleme über die Ticketverwaltung von <a href=\"https://github.com/hoylabs/OpenDTU-OnBattery/issues\" target=\"_blank\">Github</a>.",
         "Discussion": "Diskussion",
-    "DiscussionBody": "Für diese Fork können nur Fehler gemeldet werden. Diskussionen sind nicht vorgesehen."
+        "DiscussionBody": "Für diese Fork können nur Fehler gemeldet werden. Diskussionen sind nicht vorgesehen."
     },
     "hints": {
         "NoTotals": "Aktiviere und konfiguriere Funktionen, z.B. die Registrierung eines Inverters, um Daten anzuzeigen",

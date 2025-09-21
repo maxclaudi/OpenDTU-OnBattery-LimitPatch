@@ -35,7 +35,7 @@ export interface PowerLimiterInverterConfig {
 
 export interface PowerLimiterConfig {
     enabled: boolean;
-	on_disable_use_upper_limit: boolean;  // <---
+    on_disable_use_upper_limit: boolean; // <---
     solar_passthrough_enabled: boolean;
     conduction_losses: number;
     battery_always_use_at_night: boolean;
