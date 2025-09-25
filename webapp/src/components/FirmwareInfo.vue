@@ -19,7 +19,7 @@
                         <th>Firmware Version</th>
                         <td>
                             <a
-                                href="https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases/tag/25.06.11-patch_DplOff-Limit_maximum-maxclaudi"
+                                href="https://github.com/maxclaudi/OpenDTU-OnBattery-LimitPatch/releases/tag/2025.09.16-patch_DplOff-Limit_maximum-maxclaudi"
                                 target="_blank"
                             >
                                 25.06.11-patch_DplOff-Limit_maximum-maxclaudi
