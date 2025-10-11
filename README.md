@@ -1,3 +1,37 @@
+## ⚠️ Projektstatus / Project Status
+
+### 🇩🇪 Deutsch
+
+Dieses Projekt wird **nicht mehr aktiv weitergeführt** und ist **nicht länger auf GitHub verfügbar**.
+
+**Begründung:**  
+GitHub verlangt künftig verpflichtend die Aktivierung der **Zwei-Faktor-Authentifizierung (2FA)** für alle aktiven Entwicklerkonten.  
+Da ich diese Anforderung aus persönlichen und organisatorischen Gründen nicht umsetzen werde, wird das Projekt hiermit eingestellt.
+
+Der vorhandene Quellcode bleibt zu **Dokumentationszwecken** öffentlich.  
+Zukünftige Weiterentwicklungen oder Support über GitHub sind **nicht vorgesehen**.
+
+Vielen Dank an alle, die das Projekt genutzt oder begleitet haben.
+
+
+---
+
+### 🇬🇧 English
+
+This project is **no longer actively maintained** and is **no longer available on GitHub**.
+
+**Reason:**  
+GitHub now requires mandatory activation of **Two-Factor Authentication (2FA)** for all active developer accounts.  
+For personal and organizational reasons, I have decided not to enable 2FA, and therefore the project is now discontinued.
+
+The existing source code remains public **for documentation purposes only**.  
+Future development or support via GitHub is **not planned**.
+
+Thank you to everyone who has used or supported this project.
+
+
+--------
+
 # OpenDTU-OnBattery-LimitPatch
 
 This project is a fork of **OpenDTU-OnBattery**,  
